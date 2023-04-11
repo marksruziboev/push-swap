@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:32:27 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/07 16:44:46 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:46:33 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ void	ft_swap(int *arr, char *str)
         ft_putendl_fd(str, 1);
 }
 
-void    ft_push(t_stack *s, char str[2]) //pa or pb push to a pa
+/* Based on parameter 2 i use 
+use pa to push from b to a
+ use  pb push from a to b.
+ path: moves.c
+*/
+void    ft_push(t_stack *s, char str[2]) 
 {    
     if (str[1] == 'a')
     {
@@ -34,7 +39,6 @@ void    ft_push(t_stack *s, char str[2]) //pa or pb push to a pa
         ft_memmove(s->a+1, s->a, sizeof(int)*(size_t)s->size_a);
         s->size_a++;
         s->a[0] = s->b[0];
-        //s->b[s->size_b-1]= 0;
         s->size_b--;
         ft_memmove(s->b, s->b+1, sizeof(int)*(size_t)s->size_b);
     }
@@ -45,14 +49,19 @@ void    ft_push(t_stack *s, char str[2]) //pa or pb push to a pa
         ft_memmove(s->b+1, s->b, sizeof(int)*(size_t)s->size_b);
         s->size_b++;
         s->b[0] = s->a[0];
-        //s->a[s->size_a-1] = 0;
         s->size_a--;
         ft_memmove(s->a, s->a+1, sizeof(int)*(size_t)s->size_a);
     }
     ft_putendl_fd(str, 1);
 }
-
-void    ft_rotate(int *arr, int n, char *str, char *str2) // str = rota or rrota str 2 ra or rb or rr
+/*
+depeding on the value of str this function 
+rotates the stacks up and down 
+rota rotates the stack specified by str2 up 1st element becomes the last  
+or rrota rotates it down the last element becomes the fisrt
+path: moves.c  
+*/
+void    ft_rotate(int *arr, int n, char *str, char *str2) 
 {
     int tmp;
     

@@ -1,0 +1,10 @@
+
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug",
+            "program": "${workspaceFolder}/<executable file>",
+            "args": [3, 4, 5, 1, 2, 7, 9],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

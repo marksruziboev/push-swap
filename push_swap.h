@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:03:20 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/07 16:09:56 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:59:29 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 void    	chinsert(int argc, char **argv, t_stack *s);
 void    	initials(t_stack *s);
-//void		init_c(t_stack *s, t_cnst *c);
+void 		no_rep(t_stack *s);
 void     	exit_huseyin(t_stack *s);
 void 		fill_a(int argc, char **argv, t_stack *s);
 void		exit_with_message(t_stack *s, char *msg);
@@ -46,11 +46,12 @@ void	ft_reset(t_stack *s);
 
 void	ft_sort3(t_stack *s);
 void    four(t_stack *s);
-void	init_step(t_stack *s);
+void    push_to_a(t_stack *s);
 
 
-void 	no_rep(t_stack *s);
+int			init_step(t_stack *s, int n);
 int 		is_sorted(t_stack *s);
-int 		get_ch_n(t_stack *s);
+int 		get_g_s(int k);
+int			max_ind(int *arr, int k);
 
 #endif

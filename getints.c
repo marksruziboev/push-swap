@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:43:32 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/08 12:20:34 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:25:07 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,13 @@ void	fill_a(int argc, char **argv, t_stack *s)
 				exit_with_message(s, "Husseyin are out of int range!!!\n");
 			}
 			s->a[k] = (int)ft_atoi(b[j]);
-			//printf("%d,", s->a[k]);
+			//printf("fill a %d,\n", s->a[k]);
 			j++;
 			k++;
 		}
 		ft_free(b);
 	}
+	//printf("size a =%d", s->size_a);
 }
 void	no_rep(t_stack *s)
 {
@@ -46,14 +47,14 @@ void	no_rep(t_stack *s)
 	int	j;
 
 	i = -1;
-	while (++i < s->size_a - 1)
+	while (++i < s->size_a)
 	{
 		j = i;
-		while (++j < s->size_a)
+		while (++j <= s->size_a-1)
 		{
+			//printf("\n%d,", s -> a[j]);
 			if (s->a[i] == s->a[j])
-				printf("%d", s -> a[i]);
-				//exit_with_message(s, "No repeatitions Husseyin!");
+				exit_with_message(s, "No repeatitions Husseyin!");
 		}
 	}
 }
@@ -62,8 +63,10 @@ int	is_sorted(t_stack *s)
 	int	i;
 
 	i = 0;
-	while (i < s-> size_a - 1)
+	
+	while (i < s-> size_a)
 	{
+		//printf("|%d| ", s -> a[i]);
 		if (s->a[i] > s->a[i+1])
 			return (0);
 		i++;
