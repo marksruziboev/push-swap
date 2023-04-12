@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 13:00:15 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/08 11:50:17 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:18:04 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ int	alldig(int argc, char **argv)
 	while (--argc > 0)
 	{
 		i = 0;
+		if (argv[argc] && argv[argc][0] == '\0')
+			return (0);
 		while (argv[argc][i])
 		{
-			if (!ft_isdigit(argv[argc][i]) && argv[argc][i] != '-'
-				&& argv[argc][i] != ' ')
+			if (!ft_isdigit(argv[argc][i]) && argv[argc][i] != '-' && argv[argc][i] != ' ' && argv[argc][i] != '+')
 				return (0);
-			if (i + 1 <= ft_strlen(argv[argc]) && argv[argc][i] == '-'
-				&& !ft_isdigit(argv[argc][i + 1]))
+			if (i + 1 <= ft_strlen(argv[argc]) && (argv[argc][i] == '-'
+				|| argv[argc][i] == '+') && !ft_isdigit(argv[argc][i + 1]))
 				return (0);
-			//if (i == ft_strlen(argv[argc]) - 1 && argv[argc][i] == '-')
-			//	return (0);
-			if (i > 0 && !ft_isspace(argv[argc][i - 1]) && argv[argc][i] == '-')
+			if (i > 0 && !ft_isspace(argv[argc][i - 1]) && 
+			(argv[argc][i] == '-' || argv[argc][i] == '+'))
 				return (0);
 			i++;
 		}
@@ -53,8 +53,10 @@ void	chinsert(int argc, char **argv, t_stack *s)
 	if (argc == 1)
 		exit_huseyin(s);
 	else if (!alldig(argc, argv))										
+	{
 		exit_huseyin(s);
-	//   printf("Well DONE Husseyin!\n");
+	  printf("Well DONE Husseyin!\n");
+	}
 }
 void	get_size(int argc, char **argv, t_stack *s)
 {

@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:03:20 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/11 15:59:29 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:20:46 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ int 		is_sorted(t_stack *s);
 int 		get_g_s(int k);
 int			max_ind(int *arr, int k);
 
+void    search_head(t_stack *s, int bot);
 #endif

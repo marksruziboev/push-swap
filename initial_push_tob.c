@@ -42,7 +42,7 @@ int push_jthgroup(t_stack *s, int j, int n)
 	}
 	return (num);
 }
-//fprintf(stderr, "rota:%d ",s->a[k]);
+
 /*
 This function parses through the stack a several times to push from a to b
 elements of each gruop of numbers 
