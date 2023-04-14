@@ -85,3 +85,16 @@ int	max_ind(int *arr, int k)
 	}
 	return (m);
 }
+/*
+int	good_ind(int *arr, int k, int m)
+{
+	int	j;
+
+	j = 0;
+	while (++j<k)
+	{
+		if (arr[j] == m)
+			return(j);
+	}
+	return (-1);
+}*/
