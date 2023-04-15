@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:54:11 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/03/26 10:43:39 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:53:12 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);
 size_t				ft_wcnt(char *s, char c);
-long long int					ft_atoi(const char *str);
+long long int		ft_atoi(const char *str);
+
 // Bonus part
 
 typedef struct s_list

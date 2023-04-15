@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:43:32 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 17:37:44 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:42:47 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	fill_a(int argc, char **argv, t_stack *s)
 		ft_free(b);
 	}
 }
+
 void	no_rep(t_stack *s)
 {
 	int	i;
@@ -55,6 +56,7 @@ void	no_rep(t_stack *s)
 		}
 	}
 }
+
 int	is_sorted(t_stack *s)
 {
 	int	i;
@@ -68,6 +70,7 @@ int	is_sorted(t_stack *s)
 	}
 	return (1);
 }
+
 void	ft_index(t_stack *s)
 {
 	int	i;
@@ -87,6 +90,7 @@ void	ft_index(t_stack *s)
 		s->b[i] = c;
 	}
 }
+
 void	ft_reset(t_stack *s)
 {
 	int	i;

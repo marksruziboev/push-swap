@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   initial_push_tob.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maruzibo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/15 18:15:51 by maruzibo          #+#    #+#             */
+/*   Updated: 2023/04/15 18:34:46 by maruzibo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	get_g_s(int k)
@@ -17,7 +29,7 @@ This function pushes elements of jth group to b.
 each group have n ~ sqrt(size_a)  elements
 */
 
-int push_jthgroup(t_stack *s, int j, int n)
+int	push_jthgroup(t_stack *s, int j, int n)
 {
 	int	k ;
 	int	c;
@@ -28,10 +40,10 @@ int push_jthgroup(t_stack *s, int j, int n)
 	num = 0;
 	while (++k < c)
 	{
-		if (s->a[0] > j * n && s-> a[0] <= (j+1) * n)
+		if (s->a[0] > j * n && s-> a[0] <= (j + 1) * n)
 		{
 			ft_push(s, "pb");
-			if (s->b[0] > n / 2  + j * n && s->size_b > 1 && s->b[0] > s->b[1])
+			if (s->b[0] > n / 2 + j * n && s->size_b > 1 && s->b[0] > s->b[1])
 			{
 				ft_rotate(s->b, s->size_b, "rot", "rb");
 				num++;
@@ -50,7 +62,7 @@ elements of each gruop of numbers
 int	init_step(t_stack *s, int n)
 {
 	int	i;
-	int j;
+	int	j;
 
 	j = 0;
 	while (s->size_a > 0)
@@ -66,7 +78,6 @@ int	init_step(t_stack *s, int n)
 	return (j);
 }
 
-
 int	max_ind(int *arr, int k)
 {
 	int	j;
@@ -74,7 +85,7 @@ int	max_ind(int *arr, int k)
 
 	j = 0;
 	m = 0;
-	while (++j<k)
+	while (++j < k)
 	{
 		if (arr[m] < arr[j])
 			m = j;
@@ -87,10 +98,10 @@ int	min_ind(int *arr, int k, int m)
 	int	j;
 
 	j = 0;
-	while (++j<k)
+	while (++j < k)
 	{
 		if (arr[j] == m)
-			return(j);
+			return (j);
 	}
 	return (-1);
 }

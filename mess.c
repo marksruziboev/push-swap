@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:41:58 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 17:36:55 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:42:10 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	exit_huseyin(t_stack *s)
 	free(s);
 	exit(1);
 }
+
 void	exit_with_message(t_stack *s, char *msg)
 {
 	if (msg)

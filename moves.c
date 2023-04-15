@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:32:27 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 17:37:08 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:48:54 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_swap(int *arr, char *str)
 	if (sizeof(*arr) / sizeof(arr[0]) <= 0)
 		return ;
 	tmp = arr[0];
-	arr[0] = arr[1],
+	arr[0] = arr[1];
 	arr[1] = tmp;
 	if (str != NULL)
 		ft_putendl_fd(str, 1);
@@ -54,6 +54,7 @@ void	ft_push(t_stack *s, char str[2])
 	}
 	ft_putendl_fd(str, 1);
 }
+
 /*
 depeding on the value of str this function 
 rotates the stacks up and down 
@@ -77,6 +78,5 @@ void	ft_rotate(int *arr, int n, char *str, char *str2)
 		ft_memmove(arr + 1, arr, sizeof(int) * ((size_t)n - 1));
 		arr[0] = tmp;
 	}
-	// ft_putstr_fd(str, 1);
 	ft_putendl_fd(str2, 1);
 }
