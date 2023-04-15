@@ -50,12 +50,10 @@ elements of each gruop of numbers
 int	init_step(t_stack *s, int n)
 {
 	int	i;
-	//int n; 
 	int j;
 
-	//n = get_g_s(s->size_a);
 	j = 0;
-	while (s->size_a > 0)//until I push everything to b
+	while (s->size_a > 0)
 	{
 		i = push_jthgroup(s, j, n);
 		while (i > 0)
@@ -63,9 +61,7 @@ int	init_step(t_stack *s, int n)
 			ft_rotate(s->b, s->size_b, "rrot", "rrb");
 			i--;
 		}
-		//fprintf(stderr, "rota:%d ",s->size_b);
 		j++;
-
 	}
 	return (j);
 }
@@ -85,8 +81,8 @@ int	max_ind(int *arr, int k)
 	}
 	return (m);
 }
-/*
-int	good_ind(int *arr, int k, int m)
+
+int	min_ind(int *arr, int k, int m)
 {
 	int	j;
 
@@ -97,4 +93,4 @@ int	good_ind(int *arr, int k, int m)
 			return(j);
 	}
 	return (-1);
-}*/
+}

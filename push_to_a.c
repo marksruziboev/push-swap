@@ -39,7 +39,7 @@ void    search(t_stack *s)
 }
 void general_step(t_stack *s, int bot)
 {
-    while (bot > 0 &&  s->size_a - bot > 0 && s->a[0] == s->a[s->size_a-1] + 1)
+    while (bot >= 0 &&  s->size_a - bot > 0 && s->a[0] == s->a[s->size_a-1] + 1)
         ft_rotate(s->a, s->size_a, "rot", "ra");
     if (max_ind(s->b, s->size_b) == 0)
         ft_push(s, "pa");
@@ -52,7 +52,6 @@ void push_to_a(t_stack *s)
     int n;
     int d;
     int bot;
-   // int z = 0;
 
     d = s->size_a;
     n = get_g_s(d);
@@ -63,9 +62,6 @@ void push_to_a(t_stack *s)
     if (s->size_b == 0)
         exit_with_message(s,  NULL);
     step_one(s, bot);
-    int m = 0;
-    while (++m <= 20)
+    while (s->size_b >0)
         general_step(s, bot);
-    
-    
 }

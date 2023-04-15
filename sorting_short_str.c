@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:16:53 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/07 11:27:14 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/15 17:22:03 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int max_d(int *d, int e)
 }
 void    ft_sort3(t_stack *s)
 {
-   // printf("%d\n", s->size_a);
     while (is_sorted(s) == 0)
     {
         if (s->size_a == 2)
@@ -64,4 +63,7 @@ void    four(t_stack *s)
         ft_push(s, "pa");
     }
 }
-//void    five(t_stack *s)
+/*void    five(t_stack *s)
+{
+    
+}*/

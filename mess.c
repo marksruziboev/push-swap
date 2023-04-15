@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:41:58 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/07 15:25:17 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/15 17:36:55 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ void	exit_with_message(t_stack *s, char *msg)
 	if (s != NULL)
 	{
 		if (s->a != NULL)
-		{	free(s->a);
+		{
+			free(s->a);
 			s->a = NULL;
 		}
 		if (s->b != NULL)
-		{	free(s->b);
+		{
+			free(s->b);
 			s->b = NULL;
 		}
 		if (s != NULL)
