@@ -6,14 +6,15 @@
 #    By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 10:07:27 by maruzibo          #+#    #+#              #
-#    Updated: 2023/04/10 16:44:10 by maruzibo         ###   ########.fr        #
+#    Updated: 2023/04/16 18:59:03 by maruzibo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #program name
 NAME = push_swap
 
-SRC = main.c uinsert.c getints.c moves.c mess.c  sorting_short_str.c initial_push_tob.c push_to_a.c
+SRC = main.c uinsert.c getints.c moves.c mess.c  sorting_short_str.c \
+	initial_push_tob.c push_to_a.c radix_sort.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -2,7 +2,7 @@
 NBR_COUNT=100
 ##
 NBR=$(seq 1 $NBR_COUNT | sort -R | tr '\n' ' ' | rev | cut -c 2- | rev)
-#NBR="0 1 2 3 4 5 6 7 8 9"
+#NBR="22 5 30 12 3 8 26 19 4 20 17 18 1 14 23 10 29 2 6 9 7 21 27 13 11 16 15 25 28 24"
 #NBR=$(seq 1 $NBR_COUNT | tr '\n' ' ' | rev | cut -c 2- | rev)
 CMD=$( ./push_swap $NBR)
 NBR_LINK=$( echo "$NBR" | tr ' ' ',' )

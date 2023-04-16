@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:41:58 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 18:42:10 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/16 16:22:51 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	initials(t_stack *s)
 {
 	s->size_a = 0;
 	s->size_b = 0;
+	s->bot = 0;
 	s->a = NULL;
 	s->b = NULL;
 }

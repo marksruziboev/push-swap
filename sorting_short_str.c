@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:16:53 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 18:46:29 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/16 17:48:40 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ int	max_d(int *d, int e)
 
 void	ft_sort3(t_stack *s)
 {
-	while (is_sorted(s) == 0)
-	{
-		if (s->size_a == 2)
-			ft_swap(s->a, "sa");
-		else if (s->size_a == 3)
+	
+	if (s->size_a == 2)
+		ft_swap(s->a, "sa");
+	if (s->size_a == 3)
+	{		
+		while (is_sorted(s) == 0)
 		{
+			
 			if (s->a[2] == max_d(s->a, s->size_a))
 				ft_swap(s->a, "sa");
 			else if (s->a[1] == max_d(s->a, s->size_a))
@@ -64,7 +66,9 @@ void	four(t_stack *s)
 	}
 }
 
-/*void    five(t_stack *s)
+void    five(t_stack *s)
 {
-    
-}*/
+	ft_push(s, "pb");
+	four(s);
+	ft_push(s, "pa");
+}

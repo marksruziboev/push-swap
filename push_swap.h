@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:03:20 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 18:40:57 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:58:16 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ typedef struct s_stack
 	int	*b;
 	int	size_a;
 	int	size_b;
+	int bot;
 }		t_stack;
 
+void	radix_sort(t_stack *s);
 void	chinsert(int argc, char **argv, t_stack *s);
 void	initials(t_stack *s);
 void	no_rep(t_stack *s);
@@ -50,5 +52,5 @@ int		is_sorted(t_stack *s);
 int		get_g_s(int k);
 int		max_ind(int *arr, int k);
 
-void	search_head(t_stack *s, int bot);
+//void	search_head(t_stack *s, int bot);
 #endif

@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 15:43:32 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 18:42:47 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/16 12:22:25 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_sorted(t_stack *s)
 	int	i;
 
 	i = 0;
-	while (i < s->size_a)
+	while (i < s->size_a - 1)
 	{
 		if (s->a[i] > s->a[i + 1])
 			return (0);

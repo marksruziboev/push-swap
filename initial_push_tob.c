@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initial_push_tob.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maruzibo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:15:51 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/15 18:34:46 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/16 16:48:13 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,14 @@ each group have n ~ sqrt(size_a)  elements
 
 int	push_jthgroup(t_stack *s, int j, int n)
 {
-	int	k ;
-	//int	c;
+	int	c;
 	int	num;
 	int count; 
 
-	//c = s->size_a;
-	k = -1;
+	c = s->size_a;
 	num = 0;
 	count = 0; 
-	while (++k < s->size_a && count <= n) // c was here insted of s->size_a
+	while (--c >= 0 && count <= n)
 	{
 		if (s->a[0] > j * n && s-> a[0] <= (j + 1) * n)
 		{
@@ -48,7 +46,7 @@ int	push_jthgroup(t_stack *s, int j, int n)
 			if (s->b[0] > n / 2 + j * n && s->size_b > 1 && s->b[0] > s->b[1])
 			{
 				ft_rotate(s->b, s->size_b, "rot", "rb");
-				num++;
+				num++; // this counts numbers placed at the bottom of b
 			}
 			count++;// this counts number of elements pushed to b.
 		}
@@ -85,7 +83,8 @@ int	max_ind(int *arr, int k)
 {
 	int	j;
 	int	m;
-
+	if (k <= 0)
+		return (-1);
 	j = 0;
 	m = 0;
 	while (++j < k)
@@ -94,17 +93,4 @@ int	max_ind(int *arr, int k)
 			m = j;
 	}
 	return (m);
-}
-
-int	min_ind(int *arr, int k, int m)
-{
-	int	j;
-
-	j = 0;
-	while (++j < k)
-	{
-		if (arr[j] == m)
-			return (j);
-	}
-	return (-1);
 }
