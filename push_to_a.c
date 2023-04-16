@@ -20,20 +20,25 @@ void	step_one(t_stack *s, int bot)
 		ft_rotate(s->a, s->size_a, "rot", "ra");
 }
 
+void	ft_push_to_a(t_stack *s, int bot)
+{
+	if (bot > 0)
+		ft_push(s, "pa");
+	else if(bot > 0	&& s->b[0] > s->a[s->size_a - 1])
+	{
+		ft_push(s, "pa");
+		ft_rotate(s->a, s->size_a, "rot", "ra");
+	}
+	else
+		ft_rotate(s->b, s->size_b, "rot", "rb");
+}
+
 void	search(t_stack *s)
 {
 	if (max_ind(s->b, s->size_b) <= s->size_b / 2)
 	{
 		while (max_ind(s->b, s->size_b) > 0)
-		{
-			if (s->b[0] > s->a[s->size_a - 1])
-			{
-				ft_push(s, "pa");
-				ft_rotate(s->a, s->size_a, "rot", "ra");
-			}
-			else
-				ft_rotate(s->b, s->size_b, "rot", "rb");
-		}
+			ft_push_to_a(t_stack *s);
 		ft_push(s, "pa");
 	}
 	else
@@ -41,11 +46,7 @@ void	search(t_stack *s)
 		while (max_ind(s->b, s->size_b) > 0)
 		{
 			ft_rotate(s->b, s->size_b, "rrot", "rrb");
-			if (s->b[0] > s->a[s->size_a - 1])
-			{
-				ft_push(s, "pa");
-				ft_rotate(s->a, s->size_a, "rot", "ra");
-			}
+			ft_push_to_a(t_stack *s);
 		}
 		ft_push(s, "pa");
 	}
@@ -53,9 +54,9 @@ void	search(t_stack *s)
 
 void	general_step(t_stack *s, int bot)
 {
-	while (bot >= 0 && s->size_a - bot > 0 && s->a[0] == s->a[s->size_a - 1]
+	while (bot > 0 && s->size_a - bot > 0 && s->a[0] == s->a[s->size_a - 1]
 		+ 1)
-		ft_rotate(s->a, s->size_a, "rot", "ra");
+		ft_rotate(s->a, s->size_a, "rrot", "rra");
 	if (max_ind(s->b, s->size_b) == 0)
 		ft_push(s, "pa");
 	else
