@@ -32,13 +32,15 @@ each group have n ~ sqrt(size_a)  elements
 int	push_jthgroup(t_stack *s, int j, int n)
 {
 	int	k ;
-	int	c;
+	//int	c;
 	int	num;
+	int count; 
 
-	c = s->size_a;
+	//c = s->size_a;
 	k = -1;
 	num = 0;
-	while (++k < c)
+	count = 0; 
+	while (++k < s->size_a && count <= n) // c was here insted of s->size_a
 	{
 		if (s->a[0] > j * n && s-> a[0] <= (j + 1) * n)
 		{
@@ -48,6 +50,7 @@ int	push_jthgroup(t_stack *s, int j, int n)
 				ft_rotate(s->b, s->size_b, "rot", "rb");
 				num++;
 			}
+			count++;// this counts number of elements pushed to b.
 		}
 		else
 			ft_rotate(s->a, s->size_a, "rot", "ra");
