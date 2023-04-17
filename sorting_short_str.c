@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:16:53 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/16 17:48:40 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:22:45 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,25 @@ int	max_d(int *d, int e)
 	int	a;
 
 	y = -1;
-	a = 0;
+	a = d[0];
 	while (++y < e)
 	{
 		if (a < d[y])
+			a = d[y];
+	}
+	return (a);
+}
+
+int	min_d(int *d, int e)
+{
+	int	y;
+	int	a;
+
+	y = -1;
+	a = d[0];
+	while (++y < e)
+	{
+		if (a > d[y])
 			a = d[y];
 	}
 	return (a);
@@ -49,14 +64,18 @@ void	ft_sort3(t_stack *s)
 
 void	four(t_stack *s)
 {
-	if (s->a[1] == 1)
+	int	a;
+
+	a = min_d(s->a, s->size_a);
+	printf("%d", a);
+	if (s->a[1] == a)
 		ft_rotate(s->a, s->size_a, "rot", "ra");
-	else if (s->a[2] == 1)
+	else if (s->a[2] == a)
 	{
 		ft_rotate(s->a, s->size_a, "rot", "ra");
 		ft_rotate(s->a, s->size_a, "rot", "ra");
 	}
-	else if (s->a[3] == 1)
+	else if (s->a[3] == a)
 		ft_rotate(s->a, s->size_a, "rrot", "rra");
 	if (is_sorted(s) == 0)
 	{
@@ -68,7 +87,23 @@ void	four(t_stack *s)
 
 void    five(t_stack *s)
 {
-	ft_push(s, "pb");
-	four(s);
+		if (s->a[1] == s->size_b + 1)
+			ft_rotate(s->a, s->size_a, "rot", "ra");
+		else if (s->a[2] ==  s->size_b + 1)
+		{
+			ft_rotate(s->a, s->size_a, "rot", "ra");
+			ft_rotate(s->a, s->size_a, "rot", "ra");
+		}
+		else if (s->a[3] ==  s->size_b + 1)
+		{
+			ft_rotate(s->a, s->size_a, "rrot", "rra");
+			ft_rotate(s->a, s->size_a, "rrot", "rra");
+		}
+		else if (s->a[4] ==  s->size_b + 1)
+			ft_rotate(s->a, s->size_a, "rrot", "rra");
+		if (is_sorted(s) == 0)
+			ft_push(s, "pb");
+	if (is_sorted(s) == 0)
+		four(s);
 	ft_push(s, "pa");
 }

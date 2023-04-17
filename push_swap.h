@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:03:20 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/17 11:47:29 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/17 13:08:28 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 	int	size_a;
 	int	size_b;
 	int bot;
+	char r[3];
 }		t_stack;
 
 void	radix_sort(t_stack *s);
@@ -45,6 +46,7 @@ void	ft_reset(t_stack *s);
 
 void	ft_sort3(t_stack *s);
 void	four(t_stack *s);
+void	five(t_stack *s);
 void	push_to_a(t_stack *s);
 
 int		init_step(t_stack *s, int n);

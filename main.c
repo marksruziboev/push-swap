@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:01:30 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/17 10:53:39 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:28:20 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	main(int argc, char **argv)
 		ft_sort3(s);
 	else if (s->size_a == 4)
 		four(s);
+	else if (s->size_a == 5)
+		five(s);
 	else
 		push_to_a(s);//radix_sort(s);
 	exit_with_message(s, NULL);

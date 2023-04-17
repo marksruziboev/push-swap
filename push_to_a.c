@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:16:51 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/17 12:09:15 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:47:17 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,4 +117,6 @@ void	push_to_a(t_stack *s)
 	
 	while (s->size_a < d && s->size_b > 0)
 		general_step(s);
+	if (!is_sorted(s))
+		ft_rotate(s->a, s->size_a, "rrot", "rra");	
 }
