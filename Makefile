@@ -6,7 +6,7 @@
 #    By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 10:07:27 by maruzibo          #+#    #+#              #
-#    Updated: 2023/04/19 12:09:28 by maruzibo         ###   ########.fr        #
+#    Updated: 2023/04/19 13:49:27 by maruzibo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = push_swap
 
 SRC = main.c uinsert.c getints.c moves.c mess.c  sorting_short_str.c\
-	initial_push_tob.c push_to_a.c
+	initial_push_tob.c push_to_a.c util.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:15:51 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/19 12:07:55 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:57:11 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@ int	get_g_s(int k)
 		return (i + 1);
 }
 
+void	help(t_stack *s, int num, int count)
+{
+	ft_push(s, "pb");
+	printcom("pb", s);
+	ft_rotate(s->b, s->size_b, "rot");
+	printcom("rb", s);
+	num++;
+	count++;
+}
 /*This function pushes elements of jth group to b.
 each group have n ~ sqrt(size_a)  elements*/
 
@@ -46,14 +55,7 @@ int	push_jthgroup(t_stack *s, int j, int n)
 			count++;
 		}
 		else if (s->a[0] > (j + 1) * n && s-> a[0] <= (j + 2) * n)
-		{
-			ft_push(s, "pb");
-			printcom("pb", s);
-			ft_rotate(s->b, s->size_b, "rot");
-			printcom("rb", s);
-			num++;
-			count++;
-		}
+			help(s, num, count);
 		else
 		{
 			ft_rotate(s->a, s->size_a, "rot");

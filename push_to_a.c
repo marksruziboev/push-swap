@@ -6,11 +6,12 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:16:51 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/19 12:55:29 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:59:36 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 void	ft_push_to_a(t_stack *s)
 {
@@ -21,25 +22,10 @@ void	ft_push_to_a(t_stack *s)
 		s->bot++;
 	}
 	else if (s->bot == 0 && s->size_a > 0 && s->size_b > 0)
-	{
-		ft_push(s, "pa");
-		printcom("pa", s);
-		if (s->a[0] < s->a[1] - 1)
-		{
-			ft_rotate(s->a, s->size_a, "rot");
-			printcom("ra", s);
-			s->bot++;
-		}
-	}
+		pushnrot(s);
 	else if (s->bot > 0 && s->size_a > 0 && s->size_b > 0
 		&& s->b[0] > s->a[s->size_a - 1])
-	{
-		ft_push(s, "pa");
-		printcom("pa", s);
-		ft_rotate(s->a, s->size_a, "rot");
-		printcom("ra", s);
-		s->bot++;
-	}
+		pushrot(s);
 	else if (s->size_b > 1)
 	{
 		ft_rotate(s->b, s->size_b, "rot");
@@ -56,25 +42,10 @@ void	ft_push_to_ar(t_stack *s)
 		s->bot++;
 	}
 	else if (s->bot == 0 && s->size_a > 0 && s->size_b > 0)
-	{
-		ft_push(s, "pa");
-		printcom("pa", s);
-		if (s->a[0] < s->a[1] - 1)
-		{
-			ft_rotate(s->a, s->size_a, "rot");
-			printcom("ra", s);
-			s->bot++;
-		}
-	}
+		pushnrot(s);
 	else if (s->bot > 0 && s->size_a > 0 && s->size_b > 0
 		&& s->b[0] > s->a[s->size_a - 1])
-	{
-		ft_push(s, "pa");
-		printcom("pa", s);
-		ft_rotate(s->a, s->size_a, "rot");
-		printcom("ra", s);
-		s->bot++;
-	}	
+		pushrot(s);
 }
 
 void	search(t_stack *s)
@@ -122,7 +93,17 @@ void	general_step(t_stack *s)
 }
 
 void	push_to_a(t_stack *s)
-{ft_putendl_fd("pa", 1);
+{
+	int	n;
+	int	d;
+	
+	d = s->size_a;
+	n = get_g_s(d);
+	init_step(s, n);
+	while (s->b[0] == s->size_b)
+	{
+		ft_push(s, "pa");
+		printcom("pa", s);
 	}
 	if (s->size_b == 0)
 		exit_with_message(s, NULL);
@@ -136,7 +117,11 @@ void	push_to_a(t_stack *s)
 	if (s->z !=NULL)
 		ft_putendl_fd(s->z, 1);
 	}
-	ft_putendl_fd("pa", 1);
-		if(s->a[0] >s->a[1])
-			ft_putendl_fd("sa", 1);
+	if (s->z != NULL)
+		ft_putendl_fd(s->z, 1);
+	if(s->a[0] >s->a[1])
+	{
+		ft_swap(s, "sa");
+		ft_putendl_fd("sa", 1);
+	}
 }
