@@ -6,13 +6,13 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:32:27 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/17 13:18:07 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/19 09:43:30 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(int *arr, char *str)
+void	ft_swapp(int *arr)
 {
 	int	tmp;
 
@@ -21,8 +21,21 @@ void	ft_swap(int *arr, char *str)
 	tmp = arr[0];
 	arr[0] = arr[1];
 	arr[1] = tmp;
-	if (str != NULL)
-		ft_putendl_fd(str, 1);
+	//if (str != NULL)
+	//	return (str);
+		//ft_putendl_fd(str, 1);
+}
+
+void ft_swap(t_stack *s, char *str)
+{
+	if (str == NULL)
+		return ;
+	if (str[1] == 'a')
+		ft_swapp(s->a);
+	else if (str[1] == 'b')
+		ft_swapp(s->b);
+	//if (str != NULL)
+		//return (str);
 }
 
 /* Based on parameter 2 i use 
@@ -52,7 +65,8 @@ void	ft_push(t_stack *s, char str[2])
 		s->size_a--;
 		ft_memmove(s->a, s->a + 1, sizeof(int) * (size_t)s->size_a);
 	}
-	ft_putendl_fd(str, 1);
+	//return (str);
+	//ft_putendl_fd(str, 1);
 }
 
 /*
@@ -62,7 +76,7 @@ rota rotates the stack specified by str2 up 1st element becomes the last
 or rrota rotates it down the last element becomes the fisrt
 path: moves.c  
 */
-void	ft_rotate(int *arr, int n, char *str, char *str2)
+void	ft_rotate(int *arr, int n, char *str)
 {
 	int	tmp;
 
@@ -78,5 +92,6 @@ void	ft_rotate(int *arr, int n, char *str, char *str2)
 		ft_memmove(arr + 1, arr, sizeof(int) * ((size_t)n - 1));
 		arr[0] = tmp;
 	}
-	ft_putendl_fd(str2, 1);
+	//return (str2);
+	//ft_putendl_fd(str2, 1);
 }

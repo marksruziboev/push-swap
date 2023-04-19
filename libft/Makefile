@@ -6,11 +6,11 @@
 #    By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 18:27:42 by maruzibo          #+#    #+#              #
-#    Updated: 2023/03/27 15:45:44 by maruzibo         ###   ########.fr        #
+#    Updated: 2023/04/17 16:49:18 by maruzibo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
+NAME = libft.a
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror

@@ -17,7 +17,7 @@ void	*ft_calloc(size_t smem, size_t size)
 	void	*place;
 
 	place = (char *) malloc(smem * size);
-	if (! place)
+	if (!place)
 		return (NULL);
 	ft_bzero(place, (smem * size));
 	return (place);
