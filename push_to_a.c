@@ -6,20 +6,15 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:16:51 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/19 13:59:36 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:28:23 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 void	ft_push_to_a(t_stack *s)
 {
-<<<<<<< HEAD
-	if (s->bot == 0  && s->size_a == 0 && s->size_b > 0) 
-=======
 	if (s->bot == 0 && s->size_a == 0 && s->size_b > 0)
->>>>>>> 633fbea85ed1d08ef120206aa48a4c87162b1eb4
 	{
 		ft_push(s, "pa");
 		printcom("pa", s);
@@ -63,26 +58,10 @@ void	search(t_stack *s)
 			ft_push_to_a(s);
 		else if (i > 0 && i > s->size_b / 2)
 		{
-<<<<<<< HEAD
-		 	//while (s->size_b &&  --i >= 0)
-			ft_push_to_a(s);
-			//ft_push(s, "pa");
-=======
 			ft_rotate(s->b, s->size_b, "rrot");
 			printcom("rrb", s);
 			ft_push_to_ar(s);
->>>>>>> 633fbea85ed1d08ef120206aa48a4c87162b1eb4
 		}
-<<<<<<< HEAD
-		else if(i > s->size_b / 2)	
-		{
-			//while (s->size_b &&  --i >= 0)
-			ft_rotate(s->b, s->size_b, "rrot", "rrb");
-			ft_push_to_a(s);
-			//ft_push(s, "pa");
-		}
-=======
->>>>>>> 633fbea85ed1d08ef120206aa48a4c87162b1eb4
 	}
 }
 
@@ -116,7 +95,7 @@ void	push_to_a(t_stack *s)
 {
 	int	n;
 	int	d;
-	
+
 	d = s->size_a;
 	n = get_g_s(d);
 	init_step(s, n);
@@ -130,18 +109,11 @@ void	push_to_a(t_stack *s)
 	s->bot = 0;
 	while (s->size_a < d && s->size_b > 0)
 		general_step(s);
-	if (!is_sorted(s))
+	if (s->size_b == 0 && (s->z != NULL || !ft_strncmp(s->z, " ", 1)))
+		ft_putendl_fd(s->z, 1);
+	while (!is_sorted(s))
 	{
 		ft_rotate(s->a, s->size_a, "rrot");
 		ft_putendl_fd("rra", 1);
-	if (s->z !=NULL)
-		ft_putendl_fd(s->z, 1);
-	}
-	if (s->z != NULL)
-		ft_putendl_fd(s->z, 1);
-	if(s->a[0] >s->a[1])
-	{
-		ft_swap(s, "sa");
-		ft_putendl_fd("sa", 1);
 	}
 }

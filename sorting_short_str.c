@@ -6,41 +6,11 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:16:53 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/19 14:17:40 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/20 12:48:06 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	max_d(int *d, int e)
-{
-	int	y;
-	int	a;
-
-	y = -1;
-	a = d[0];
-	while (++y < e)
-	{
-		if (a < d[y])
-			a = d[y];
-	}
-	return (a);
-}
-
-int	min_d(int *d, int e)
-{
-	int	y;
-	int	a;
-
-	y = -1;
-	a = d[0];
-	while (++y < e)
-	{
-		if (a > d[y])
-			a = d[y];
-	}
-	return (a);
-}
 
 void	ft_sort2(t_stack *s)
 {
@@ -51,10 +21,10 @@ void	ft_sort2(t_stack *s)
 	}
 }
 
-void ft_sort3(t_stack *s)
-{		
+void	ft_sort3(t_stack *s)
+{
 	while (is_sorted(s) == 0)
-	{	
+	{
 		if (s->a[2] == max_d(s->a, s->size_a))
 		{
 			ft_swap(s, "sa");
@@ -73,11 +43,8 @@ void ft_sort3(t_stack *s)
 	}
 }
 
-void	four(t_stack *s)
+void	fourone(t_stack *s, int a)
 {
-	int	a;
-	
-	a = min_d(s->a, s->size_a);
 	if (s->a[1] == a)
 	{
 		ft_rotate(s->a, s->size_a, "rot");
@@ -91,41 +58,24 @@ void	four(t_stack *s)
 		ft_putendl_fd("ra", 1);
 	}
 	else if (s->a[3] == a)
+	{
 		ft_rotate(s->a, s->size_a, "rrot");
 		ft_putendl_fd("rra", 1);
+	}
+}
+
+void	four(t_stack *s)
+{
+	int	a;
+
+	a = min_d(s->a, s->size_a);
+	fourone(s, a);
 	if (is_sorted(s) == 0)
 	{
 		ft_push(s, "pb");
 		ft_putendl_fd("pb", 1);
 		ft_sort3(s);
 		ft_push(s, "pa");
-		ft_putendl_fd("pb", 1);
+		ft_putendl_fd("pa", 1);
 	}
-}
-
-void	five(t_stack *s)
-{
-	int	i;
-	
-	i = 1;
-	
-	if (s->a[1] == 1)
-		ft_rotate(s->a, s->size_a, "rot", "ra");
-	else if (s->a[2] == 1)
-	{
-		ft_rotate(s->a, s->size_a, "rot", "ra");
-		ft_rotate(s->a, s->size_a, "rot", "ra");
-	}
-	else if (s->a[3] == 1)
-	{
-		ft_rotate(s->a, s->size_a, "rrot", "rra");
-		ft_rotate(s->a, s->size_a, "rrot", "rra");
-	}
-	else if (s->a[4] == 1)
-		ft_rotate(s->a, s->size_a, "rrot", "rra");
-	if (is_sorted(s) == 0)
-		ft_push(s, "pb");
-	if (is_sorted(s) == 0)
-		four(s);
-	ft_push(s, "pa");
 }

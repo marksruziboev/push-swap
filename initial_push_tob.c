@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 18:15:51 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/19 13:57:11 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/20 11:49:39 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,22 @@ int	get_g_s(int k)
 		return (i + 1);
 }
 
-void	help(t_stack *s, int num, int count)
+void	help(t_stack *s)
 {
 	ft_push(s, "pb");
 	printcom("pb", s);
 	ft_rotate(s->b, s->size_b, "rot");
 	printcom("rb", s);
-	num++;
-	count++;
 }
 /*This function pushes elements of jth group to b.
 each group have n ~ sqrt(size_a)  elements*/
 
-int	push_jthgroup(t_stack *s, int j, int n)
+int	push_jthgroup(t_stack *s, int j, int n, int count)
 {
 	int	c;
-	int	num;
-	int	count;
 
 	c = s->size_a;
-	num = 0;
-	count = 0;
+	s->tmp = 0;
 	while (--c >= 0 && count <= 2 * n)
 	{
 		if (s->a[0] > j * n && s-> a[0] <= (j + 1) * n)
@@ -55,14 +50,18 @@ int	push_jthgroup(t_stack *s, int j, int n)
 			count++;
 		}
 		else if (s->a[0] > (j + 1) * n && s-> a[0] <= (j + 2) * n)
-			help(s, num, count);
+		{
+			help(s);
+			s->tmp++;
+			count++;
+		}
 		else
 		{
 			ft_rotate(s->a, s->size_a, "rot");
 			printcom("ra", s);
 		}
 	}
-	return (num);
+	return (s->tmp);
 }
 
 /*
@@ -77,7 +76,7 @@ int	init_step(t_stack *s, int n)
 	j = 0;
 	while (s->size_a > 0)
 	{
-		i = push_jthgroup(s, j, n);
+		i = push_jthgroup(s, j, n, 0);
 		while (i > 0)
 		{
 			ft_rotate(s->b, s->size_b, "rrot");

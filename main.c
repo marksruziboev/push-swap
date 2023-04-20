@@ -6,15 +6,14 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:01:30 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/19 14:11:19 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:23:31 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void allocate(int argc, char **argv, t_stack *s)
+void	allocate(int argc, char **argv, t_stack *s)
 {
-
 	get_size(argc, argv, s);
 	chinsert(argc, argv, s);
 	s->a = ft_calloc(sizeof(int), (size_t)s->size_a);
@@ -33,8 +32,8 @@ void allocate(int argc, char **argv, t_stack *s)
 int	main(int argc, char **argv)
 {
 	t_stack	*s;
-	
-	if (argc == 1) 
+
+	if (argc == 1)
 		return (0);
 	s = ft_calloc(1, sizeof(t_stack));
 	if (s == NULL)
@@ -46,14 +45,15 @@ int	main(int argc, char **argv)
 	ft_index(s);
 	ft_reset(s);
 	if (s->size_a == 2)
-		ft_sort3(s);
+		ft_sort2(s);
 	else if (s->size_a == 3)
 		ft_sort3(s);
 	else if (s->size_a == 4)
 		four(s);
 	else if (s->size_a == 5)
 		five(s);
-	push_to_a(s);
+	else
+		push_to_a(s);
 	exit_with_message(s, NULL);
 	return (0);
 }

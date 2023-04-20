@@ -6,7 +6,7 @@
 /*   By: maruzibo <maruzibo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:32:27 by maruzibo          #+#    #+#             */
-/*   Updated: 2023/04/19 09:43:30 by maruzibo         ###   ########.fr       */
+/*   Updated: 2023/04/20 12:32:30 by maruzibo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,9 @@ void	ft_swapp(int *arr)
 	tmp = arr[0];
 	arr[0] = arr[1];
 	arr[1] = tmp;
-	//if (str != NULL)
-	//	return (str);
-		//ft_putendl_fd(str, 1);
 }
 
-void ft_swap(t_stack *s, char *str)
+void	ft_swap(t_stack *s, char *str)
 {
 	if (str == NULL)
 		return ;
@@ -34,8 +31,6 @@ void ft_swap(t_stack *s, char *str)
 		ft_swapp(s->a);
 	else if (str[1] == 'b')
 		ft_swapp(s->b);
-	//if (str != NULL)
-		//return (str);
 }
 
 /* Based on parameter 2 i use 
@@ -65,8 +60,6 @@ void	ft_push(t_stack *s, char str[2])
 		s->size_a--;
 		ft_memmove(s->a, s->a + 1, sizeof(int) * (size_t)s->size_a);
 	}
-	//return (str);
-	//ft_putendl_fd(str, 1);
 }
 
 /*
@@ -92,6 +85,4 @@ void	ft_rotate(int *arr, int n, char *str)
 		ft_memmove(arr + 1, arr, sizeof(int) * ((size_t)n - 1));
 		arr[0] = tmp;
 	}
-	//return (str2);
-	//ft_putendl_fd(str2, 1);
 }
