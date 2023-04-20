@@ -15,7 +15,11 @@
 
 void	ft_push_to_a(t_stack *s)
 {
+<<<<<<< HEAD
+	if (s->bot == 0  && s->size_a == 0 && s->size_b > 0) 
+=======
 	if (s->bot == 0 && s->size_a == 0 && s->size_b > 0)
+>>>>>>> 633fbea85ed1d08ef120206aa48a4c87162b1eb4
 	{
 		ft_push(s, "pa");
 		printcom("pa", s);
@@ -59,10 +63,26 @@ void	search(t_stack *s)
 			ft_push_to_a(s);
 		else if (i > 0 && i > s->size_b / 2)
 		{
+<<<<<<< HEAD
+		 	//while (s->size_b &&  --i >= 0)
+			ft_push_to_a(s);
+			//ft_push(s, "pa");
+=======
 			ft_rotate(s->b, s->size_b, "rrot");
 			printcom("rrb", s);
 			ft_push_to_ar(s);
+>>>>>>> 633fbea85ed1d08ef120206aa48a4c87162b1eb4
 		}
+<<<<<<< HEAD
+		else if(i > s->size_b / 2)	
+		{
+			//while (s->size_b &&  --i >= 0)
+			ft_rotate(s->b, s->size_b, "rrot", "rrb");
+			ft_push_to_a(s);
+			//ft_push(s, "pa");
+		}
+=======
+>>>>>>> 633fbea85ed1d08ef120206aa48a4c87162b1eb4
 	}
 }
 

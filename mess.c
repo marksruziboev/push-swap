@@ -18,20 +18,20 @@ void	exit_with_message(t_stack *s, char *msg)
 		ft_putstr_fd(msg, 2);
 	if (s != NULL)
 	{
-		if (s->a != NULL)
+		if (s->z != NULL)
 		{
-			free(s->a);
-			s->a = NULL;
-		}
+			free(s->z);
+			s->z = NULL;
 		if (s->b != NULL)
 		{
 			free(s->b);
 			s->b = NULL;
 		}
-		if (s->z != NULL)
+		if (s->a != NULL)
 		{
-			free(s->z);
-			s->z = NULL;
+			free(s->a);
+			s->a = NULL;
+		}
 		}
 		if (s != NULL)
 			free(s);
