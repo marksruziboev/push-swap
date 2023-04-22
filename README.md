@@ -39,7 +39,12 @@ Sorting is done in two steps:
       For each number we check again after pushing to b  and if it is between 1 and 4 we rotate b.
       After completing the process we obtain pre-sorted stack a, where the largest group is either on the top or at the bottom.
   
-  s2. Sending elements from b to a: 
-      In the 
-      
+  s2. Sending elements from b to a: We virtually devide a into two upper part is the place we want to ahve sorted stack and the bottom, 
+  where we save increasing substack for later use by reverserotating. 
+      For b[0] we check the folloiwng 3 cases:
+        if stack a is empty we push b[0].
+        if a is not empty but b[0] is larer than  a[bot -1], we push b[0] and rotate.
+        if b[0] is the next element we push it to stack b.
+        if none ofthe above is satisfied the we rotate b if the largest element is in the upper half of b or or reverse rotate b. 
+       
 
