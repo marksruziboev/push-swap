@@ -35,6 +35,11 @@ Sorting is done in two steps:
   s1. We devide the stack a into sqrt(n) groups and push all the numbers from stack a to b as follows:
       We sent two groups of elements starting with the gourps of smallest elements 
       (For example, if n = 16 we have 4 groups with 4 elements each 1 2 3 4| 5 6 7 8| 9 10 11 12| 13 14 15 16
-      we first send elements from 1 to 8 if a[0] is not in this interval we rotate a. 
+      we first send elements from 1 to 8 if a[0] is not in this interval we rotate a until we send all the numbers.
+      For each number we check again after pushing to b  and if it is between 1 and 4 we rotate b.
+      After completing the process we obtain pre-sorted stack a, where the largest group is either on the top or at the bottom.
+  
+  s2. Sending elements from b to a: 
+      In the 
       
 
