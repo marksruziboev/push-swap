@@ -27,8 +27,6 @@ The main part of the project is to sort the stack a.
 
 ============   SORTING   ============
 
-Here, I used an algorithm that is somewhat similar to the Hanoi tower construction.
-
 The main part of the project is to sort stack a.
 
 Here, I used an algorithm that is somewhat similar to the Hanoi tower construction. 
