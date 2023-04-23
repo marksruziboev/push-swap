@@ -56,7 +56,9 @@ Else if b[0] is the next element, we push it to stack b.
 Else (if none of the above is satisfied), we do one of the following two operations:
 
 If the largest element of b is in the upper half of b, we rotate b. (Here I implemented max_ind, a function which returns the index of the maximum element).
+
 Else, we reverse rotate b.
+
 We continue this process until all elements from stack b are pushed to stack a and reversre rotate a if the smallest element is at the bottom to get a fully sorted stack a.
 
 ============   OPTIMIZATION   ============
