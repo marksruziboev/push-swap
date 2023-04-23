@@ -4,7 +4,7 @@ This project about sorting a stack of integers. The program consists of two main
 (1) Reading from user input.
 (2) Sorting algorithm. 
 
-\nEach of the above devided into several sections.
+Each of the above devided into several sections.
 
 In (1) we check if the input is valid in two stages: 
   a) at the level of strings 
