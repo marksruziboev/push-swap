@@ -7,6 +7,7 @@ The program consists of two main parts:
 Each of the above is divided into several sections.
 
 ============   PARSING   ============
+
 In (1), we check if the input is valid in two stages:
 a) At the level of strings.
 b) After converting the input to integers.
