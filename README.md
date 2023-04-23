@@ -51,7 +51,9 @@ Sorting is done in two steps:
           (Here I implemented max_ind a funtion which returns the index of max element)
           else we reverse rotate b.
         } 
+
+
 This should be enough to get 5 points (100). But one can improve the statistics as follows.
-Instead of printing the commands directly, we introduce a string (char *z in my struct) that is empty at the beginning.
+Instead of printing the commands directly, i introduce a string (z in my struct) that is empty at the beginning.
 The function printcom (in mess.c) takes new command and compares it with z and combines them if possible,
 prints the combined function and set z = ' '. Otherwise prints z and rewrites the new command to z.
